@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="red" data-mode="light">
+<html lang="en" data-theme="ios28" data-mode="light">
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function () {
+      try {
+        var savedMode = localStorage.getItem('ew_mode') || localStorage.getItem('ew_theme_mode') || 'light';
+        document.documentElement.setAttribute('data-mode', savedMode === 'dark' ? 'dark' : 'light');
+      } catch (error) {
+        document.documentElement.setAttribute('data-mode', 'light');
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scheduled Maintenance &bull; Explore Wings Digital Technologies</title>
   <link rel="icon" type="image/png" href="./images/logo.png">
-  <link rel="stylesheet" href="./css/style.css?v=gh-pages">
-  <style>
+  <link rel="canonical" href="https://explorewings.com/maintenance.html">
+  <link rel="stylesheet" href="./css/style.css?v=7.4.0">
+    <style>
     .maintenance-screen {
       min-height: 100vh;
       display: flex;
@@ -16,15 +27,34 @@
       background: var(--bg);
       text-align: center;
     }
+    .maintenance-mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid var(--separator);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
     .maintenance-card {
       max-width: 580px;
       width: 100%;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
+      background: var(--bg2);
+      border: 1px solid var(--separator);
       border-radius: var(--radius-lg);
       padding: 48px 36px;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-hard-light);
       position: relative;
+      color: var(--ink);
+    }
+    .maintenance-card h1 {
+      color: var(--ink) !important;
     }
     .maintenance-badge {
       display: inline-flex;
@@ -38,10 +68,31 @@
       border-radius: 999px;
       margin-bottom: 20px;
     }
+    .maintenance-card > p,
+    .maintenance-card > div[style*="border-top"] {
+      color: var(--ink2) !important;
+    }
+    .maintenance-card > div[style*="background: var(--bg-surface)"] {
+      background: var(--bg3) !important;
+      color: var(--ink) !important;
+    }
+    .maintenance-card a {
+      color: var(--accent) !important;
+    }
+    @media (max-width: 560px) {
+      .maintenance-card {
+        padding: 36px 22px;
+      }
+      .maintenance-mode-toggle {
+        top: 12px;
+        right: 12px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="maintenance-screen">
+    <button class="maintenance-mode-toggle" type="button" aria-label="Switch to dark mode">Dark mode</button>
     <div class="maintenance-card">
       
 
@@ -52,18 +103,18 @@
       </div>
       
       <div class="maintenance-badge">
-        <span class="pulse-dot" style="background: #F59E0B;" aria-hidden="true"></span>
+        <span class="pulse-dot" style="background: #D90F1F;" aria-hidden="true"></span>
         <span>Scheduled Maintenance in Progress</span>
       </div>
 
       <h1 style="font-size: 2rem; margin-bottom: 12px; font-family: var(--font-display);">We are tuning up our systems.</h1>
-      <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 24px;">
-        Trivandrum studio maintenance test in progress.
+      <p id="maintenanceMessage" style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 24px;">
+        Our Trivandrum-based team works with clients across Kerala, India and internationally. For urgent project enquiries, please call or email us.
       </p>
 
       
-        <div style="font-size: 0.875rem; color: var(--text); background: var(--bg-surface); padding: 12px; border-radius: var(--radius-sm); margin-bottom: 24px;">
-          Estimated back online: <strong>Today at 6:00 PM IST</strong>
+        <div id="maintenanceReturnTime" style="font-size: 0.875rem; color: var(--text); background: var(--bg-surface); padding: 12px; border-radius: var(--radius-sm); margin-bottom: 24px;">
+          We will be back online as soon as possible. Thank you for your patience.
         </div>
       
 
@@ -90,6 +141,28 @@
   </div>
 
   <script>
+    const modeToggle = document.querySelector('.maintenance-mode-toggle');
+    if (modeToggle) {
+      const updateModeToggle = () => {
+        const isDark = document.documentElement.getAttribute('data-mode') === 'dark';
+        modeToggle.textContent = isDark ? 'Light mode' : 'Dark mode';
+        modeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        modeToggle.setAttribute('aria-pressed', String(isDark));
+      };
+      updateModeToggle();
+      modeToggle.addEventListener('click', () => {
+        const nextMode = document.documentElement.getAttribute('data-mode') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-mode', nextMode);
+        try {
+          localStorage.setItem('ew_mode', nextMode);
+          localStorage.setItem('ew_theme_mode', nextMode);
+        } catch (error) {
+          console.error('Unable to save the maintenance page theme preference.', error);
+        }
+        updateModeToggle();
+      });
+    }
+
     const notifyForm = document.getElementById('notifyForm');
     if (notifyForm) {
       notifyForm.addEventListener('submit', async (e) => {

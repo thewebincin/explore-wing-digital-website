@@ -1,674 +1,493 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="red" data-mode="light">
+<html lang="en" data-theme="red-signal" data-mode="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore Wings Digital Technologies | Trivandrum</title>
-  <meta name="description" content="Explore Wings Digital Technologies in Trivandrum (Thiruvananthapuram), Kerala helps businesses launch, grow, and manage their brand online with websites, branding, social media, photography, and digital marketing.">
-  <link rel="canonical" href="./about.html">
-  
-  <!-- Preconnect and Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>About Explore Wings Digital Technologies | Kerala &amp; Beyond</title>
+  <meta name="description" content="Meet the Trivandrum-based digital studio working with businesses across Kerala, India and internationally. Learn about our team and approach.">
+  <link rel="canonical" href="https://explorewings.com/about.html">
+  <link rel="icon" type="image/png" href="assets/logos/logo.png">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/logo.png">
-  <link rel="apple-touch-icon" href="/logo.png">
+  <!-- PRE-PAINT THEME HYDRATION SCRIPT (No Flash / FOUC) -->
+  <script>
+  (function() {
+    try {
+      var t = 'red-signal';
+      var m = localStorage.getItem('ew_mode') || localStorage.getItem('ew_theme_mode') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.setAttribute('data-mode', m);
+    } catch (e) {}
+  })();
+  </script>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Explore Wings Digital Technologies">
-  <meta property="og:description" content="Websites, branding, social media, photo &amp; video shoots, and digital marketing crafted in Trivandrum, Kerala.">
-  <meta property="og:image" content="/logo.png">
-  <meta property="og:url" content="/about">
+  <meta property="og:title" content="About Explore Wings Digital Technologies | Kerala &amp; Beyond">
+  <meta property="og:description" content="Meet the Trivandrum-based digital studio working with businesses across Kerala, India and internationally. Learn about our team and approach.">
+  <meta property="og:url" content="https://explorewings.com/about.html">
+  <meta property="og:image" content="assets/logos/logo.png">
 
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="./css/style.css?v=1.0.0">
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Explore Wings Digital Technologies",
+    "image": "assets/logos/logo.png",
+    "telephone": "+91 75104 05067",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Trivandrum",
+      "addressRegion": "Kerala",
+      "addressCountry": "IN"
+    },
+    "url": "https://explorewings.com/"
+  }
+  </script>
 
-  <!-- Dynamic JSON-LD Schema -->
-  
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Explore Wings Digital Technologies",
-      "image": "/logo.png",
-      "description": "Digital agency in Trivandrum (Thiruvananthapuram), Kerala specializing in website design, branding & logos, social media, photo & video production, and digital marketing.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Thiruvananthapuram (Trivandrum)",
-        "addressRegion": "Kerala",
-        "postalCode": "695003",
-        "addressCountry": "IN"
-      },
-      "telephone": ["+91-75104-05067", "+91-62389-76168"],
-      "openingHours": "Mo-Sa 09:30-18:30"
-    }
-    </script>
-  
+  <!-- Google Fonts: Bricolage Grotesque headings and Figtree interface text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Analytics 4 (Only if configured) -->
-  
+  <link rel="stylesheet" href="style.css?v=7.9.0">
 </head>
-<body data-page="about">
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
 
-  <!-- Admin Live Preview Banner if Maintenance Mode is ON -->
-  
-
-  <!-- Preloader, Sweep, Wipe & Ambient Orbs -->
+  <!-- PRELOADER -->
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader-panel-left"></div>
     <div class="preloader-panel-right"></div>
-    <div class="preloader-center">
-      <div class="logo-white-chip chip-lg">
-        <img src="/logo.png" alt="Explore Wings Logo">
+    <div class="preloader-content">
+      <div class="preloader-stamp">
+        <span class="preloader-stamp-text">EXPLORE WINGS • TRIVANDRUM</span>
       </div>
-      <div class="preloader-counter" id="preloaderCounter">0%</div>
-      <div class="preloader-bar">
-        <div class="preloader-bar-fill" id="preloaderBarFill"></div>
-      </div>
-      <div style="font-size:0.74rem; letter-spacing:0.18em; text-transform:uppercase; opacity:0.8;">
-        Explore Wings Digital • Trivandrum
-      </div>
+      <div class="preloader-title">EXPLORE WINGS</div>
+      <div class="preloader-sub">Digital Technologies • Kerala</div>
+      <div class="preloader-bar"><div class="preloader-progress" id="preloaderProgress"></div></div>
     </div>
   </div>
-
-  <div class="page-transition-sweep" id="pageTransitionSweep" aria-hidden="true">
-    <div class="logo-white-chip chip-lg">
-      <img src="/logo.png" alt="Explore Wings Logo">
-    </div>
-  </div>
-
-  <div class="theme-wipe-circle" id="themeWipeCircle" aria-hidden="true"></div>
-  <div class="scroll-progress-bar" aria-hidden="true"></div>
-
-  <!-- Ambient Floating Theme Orbs -->
-  <div class="ambient-orbs" aria-hidden="true">
-    <div class="ambient-orb orb-1"></div>
-    <div class="ambient-orb orb-2"></div>
-    <div class="ambient-orb orb-3"></div>
-  </div>
-
-  <!-- Top Utility Bar -->
-  <!-- SECTION 1: ANNOUNCEMENT & TOP UTILITY BAR -->
-<div class="top-utility-bar" role="region" aria-label="Announcement and Site Preferences">
-  <div class="container top-utility-inner">
-    <div class="top-announcement-msg">
-      <span class="top-announcement-badge">Trivandrum, Kerala</span>
-      <span>Direct Call: <a href="tel:+917510405067" style="color:inherit; font-weight:700; text-decoration:underline;">+91 75104 05067</a> / <a href="tel:+916238976168" style="color:inherit; font-weight:700; text-decoration:underline;">+91 62389 76168</a> • Free 30-Min Strategy Session</span>
-    </div>
-
-    <div class="top-controls-cluster">
-      <!-- Auto Scroll Button + Speed Selector -->
-      <div class="auto-scroll-group" role="group" aria-label="Auto Scroll Controls">
-        <button type="button" class="auto-scroll-toggle-btn" aria-pressed="false">
-          ▶ Auto scroll
-        </button>
-        <select class="auto-scroll-speed-select" aria-label="Auto scroll speed">
-          <option value="slow">Slow</option>
-          <option value="medium" selected>Medium</option>
-          <option value="fast">Fast</option>
-        </select>
+  <!-- TOP UTILITY BAR (With Theme Dropdown & Mode Switcher) -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span class="studio-status">Studio Open · Trivandrum · Serving Kerala &amp; beyond</span>
+        <span class="divider-slash">/</span>
+        <span class="top-bar-phone">Call: <a href="tel:+917510405067">+91 75104 05067</a> &bull; <a href="tel:+916238976168">+91 62389 76168</a></span>
       </div>
+      <div class="top-bar-right">
+        <!-- Theme Dropdown (Red Signal vs iOS 28) -->
+        <div class="theme-select-group">
+          <label for="themeSelect" class="top-bar-control-label">Theme:</label>
+          <select id="themeSelect" class="theme-select-pill" aria-label="Visual Theme Switcher">
+            <option value="red-signal">Red Signal</option>
+            <option value="ios28">iOS 28</option>
+          </select>
+        </div>
 
-      <!-- Red & Green Round Theme Swatches (Red active by default) -->
-      <div class="theme-swatch-group" role="group" aria-label="Color Theme Selector">
-        <span class="theme-swatch-label">Theme:</span>
-        <button
-          type="button"
-          class="theme-swatch swatch-green"
-          data-set-theme="green"
-          aria-label="Green Theme"
-          title="Switch to Green Theme (#00A36C)"
-        ></button>
-        <button
-          type="button"
-          class="theme-swatch swatch-red active"
-          data-set-theme="red"
-          aria-label="Red Theme"
-          title="Switch to Red Theme (#E11D2E)"
-        ></button>
-      </div>
+        <!-- Mode Toggle (Light / Dark) -->
+        <div class="mode-toggle-group" role="group" aria-label="Visual Mode Switcher">
+          <button type="button" class="mode-btn is-active" data-set-mode="split" title="Light / Split Mode">Light</button>
+          <button type="button" class="mode-btn" data-set-mode="dark" title="Dark Mode">Dark</button>
+        </div>
 
-      <!-- Separate Light / Dark Mode Toggle -->
-      <button type="button" class="mode-toggle-btn" aria-label="Toggle Light or Dark Mode">
-        <span>☀</span> <span>Light Mode</span>
-      </button>
-    </div>
-  </div>
-</div>
-
-
-  <!-- Sticky Navbar -->
-  <!-- SECTION 2: STICKY NAVBAR WITH MEGA-MENUS (Services, Industries) -->
-<header class="navbar">
-  <div class="container navbar-inner">
-    <a href="./index.html" class="brand-logo-link" aria-label="Explore Wings Digital Technologies Home">
-      <span class="logo-white-chip">
-        <img src="/logo.png" alt="Explore Wings Logo" />
-      </span>
-      <span class="brand-logo-text">
-        <span class="brand-logo-title">Explore Wings</span>
-        <span class="brand-logo-sub">Digital Technologies</span>
-      </span>
-    </a>
-
-    <nav class="nav-links" aria-label="Primary Navigation">
-      <div class="nav-item">
-        <a href="./index.html" class="nav-link ">Home</a>
-      </div>
-
-      <!-- Mega-Menu 1: Services -->
-      <div class="nav-item has-mega">
-        <a href="./services.html" class="nav-link ">
-          <span>Services</span> <span style="font-size:0.7rem;">▾</span>
-        </a>
-        <div class="mega-menu" role="menu">
-          <div class="mega-grid-links">
-            <a href="/services#service-websites" class="mega-service-item">
-              <div class="mega-icon">🌐</div>
-              <div>
-                <h5>Website Design</h5>
-                <p>Fast, mobile-first websites built to convert local visitors</p>
-              </div>
-            </a>
-            <a href="/services#service-branding" class="mega-service-item">
-              <div class="mega-icon">✦</div>
-              <div>
-                <h5>Branding &amp; Logos</h5>
-                <p>Logos, menus, packaging, signage &amp; brand guidelines</p>
-              </div>
-            </a>
-            <a href="/services#service-social" class="mega-service-item">
-              <div class="mega-icon">📱</div>
-              <div>
-                <h5>Social Media</h5>
-                <p>Instagram Reels, festive campaigns &amp; monthly calendars</p>
-              </div>
-            </a>
-            <a href="/services#service-production" class="mega-service-item">
-              <div class="mega-icon">🎬</div>
-              <div>
-                <h5>Photo &amp; Video</h5>
-                <p>On-location food, resort, fitness &amp; product shoots</p>
-              </div>
-            </a>
-            <a href="/services#service-marketing" class="mega-service-item">
-              <div class="mega-icon">📍</div>
-              <div>
-                <h5>Digital Marketing</h5>
-                <p>Google Maps SEO &amp; targeted local lead ads</p>
-              </div>
-            </a>
-            <a href="/services#service-business-web" class="mega-service-item">
-              <div class="mega-icon">📅</div>
-              <div>
-                <h5>Business Websites</h5>
-                <p>WhatsApp ordering, booking systems &amp; portals</p>
-              </div>
-            </a>
-          </div>
-          <div class="mega-promo-card">
-            <div>
-              <span class="mega-promo-badge">All-In-One Studio</span>
-              <h4 class="heading-lg" style="margin-bottom:0.45rem;">Launch Your Brand in Trivandrum</h4>
-              <p style="font-size:0.82rem; opacity:0.84;">Get your logo, photography shoot, and website built under one roof.</p>
-            </div>
-            <a href="./pricing.html" class="btn btn-accent" style="width:100%; padding:0.7rem 1rem; font-size:0.84rem;">
-              <span>Explore Packages</span> <span class="btn-arrow">→</span>
-            </a>
-          </div>
+        <!-- Auto-Scroll Toggle -->
+        <div class="auto-scroll-group">
+          <button type="button" class="auto-scroll-btn" id="autoScrollToggle" aria-pressed="false" title="Smooth Page Tour">
+            <svg class="auto-scroll-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span class="auto-scroll-text">Auto-Scroll</span>
+          </button>
         </div>
       </div>
-
-      <!-- Mega-Menu 2: Industries -->
-      <div class="nav-item has-mega">
-        <a href="./services.html" class="nav-link">
-          <span>Industries</span> <span style="font-size:0.7rem;">▾</span>
-        </a>
-        <div class="mega-menu" role="menu">
-          <div class="mega-grid-links">
-            <a href="./services.html" class="mega-service-item">
-              <div class="mega-icon">🌴</div>
-              <div>
-                <h5>Resorts &amp; Ayurveda</h5>
-                <p>Kovalam &amp; Varkala hospitality websites with booking enquiries</p>
-              </div>
-            </a>
-            <a href="./services.html" class="mega-service-item">
-              <div class="mega-icon">☕</div>
-              <div>
-                <h5>Cafes &amp; Restaurants</h5>
-                <p>QR code menus, food photography, and viral food reels</p>
-              </div>
-            </a>
-            <a href="./services.html" class="mega-service-item">
-              <div class="mega-icon">🎓</div>
-              <div>
-                <h5>Education &amp; Study Abroad</h5>
-                <p>High-converting landing pages for student registrations</p>
-              </div>
-            </a>
-            <a href="./services.html" class="mega-service-item">
-              <div class="mega-icon">🏋️</div>
-              <div>
-                <h5>Gyms &amp; Wellness</h5>
-                <p>Fitness branding, transformation showcases &amp; membership forms</p>
-              </div>
-            </a>
-            <a href="./services.html" class="mega-service-item">
-              <div class="mega-icon">🍱</div>
-              <div>
-                <h5>Food &amp; Packaged Goods</h5>
-                <p>FSSAI-compliant packaging, labels, and shop displays</p>
-              </div>
-            </a>
-            <a href="./services.html" class="mega-service-item">
-              <div class="mega-icon">🛍️</div>
-              <div>
-                <h5>Retail &amp; Malls</h5>
-                <p>Footfall campaigns, festive signage, and store launches</p>
-              </div>
-            </a>
-          </div>
-          <div class="mega-promo-card">
-            <div>
-              <span class="mega-promo-badge">Local Focus</span>
-              <h4 class="heading-lg" style="margin-bottom:0.45rem;">Made for Kerala Businesses</h4>
-              <p style="font-size:0.82rem; opacity:0.84;">We understand Malayalam cultural nuances, festive shopping peaks, and local customer behavior.</p>
-            </div>
-            <a href="./contact.html" class="btn btn-accent" style="width:100%; padding:0.7rem 1rem; font-size:0.84rem;">
-              <span>Talk to our Founder</span> <span class="btn-arrow">→</span>
-            </a>
-          </div>
+    </div>
+  </div>
+  <!-- MAIN NAVIGATION -->
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header-inner">
+      <a href="index.html" class="brand-link" aria-label="Explore Wings Digital Technologies Home">
+        <div class="logo-chip">
+          <img src="assets/logos/logo.png" alt="Explore Wings Logo" width="40" height="40" class="logo-img">
         </div>
-      </div>
-
-      <div class="nav-item">
-        <a href="./pricing.html" class="nav-link ">Pricing</a>
-      </div>
-
-      <div class="nav-item">
-        <a href="./about.html" class="nav-link active">About</a>
-      </div>
-
-      <div class="nav-item">
-        <a href="./contact.html" class="nav-link ">Contact</a>
-      </div>
-    </nav>
-
-    <!-- Nav Actions: Login / Contact & "Start your project" CTA -->
-    <div class="nav-actions">
-      <a href="/admin/login" class="nav-login-link" title="Owner Admin Portal">Admin Login</a>
-      <a href="./contact.html" class="btn btn-primary">
-        <span>Start your project</span>
-        <span class="btn-arrow">→</span>
+        <div class="brand-copy">
+          <span class="brand-name">EXPLORE WINGS</span>
+          <span class="brand-tag">DIGITAL TECHNOLOGIES</span>
+        </div>
       </a>
-      <button type="button" class="menu-toggle" aria-label="Open Mobile Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
 
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <div class="mobile-menu-inner">
-      <div class="mobile-menu-links">
-        <a href="./index.html" class="mobile-nav-link">Home</a>
-        <a href="./services.html" class="mobile-nav-link">Services</a>
-        <a href="./pricing.html" class="mobile-nav-link">Pricing</a>
-        <a href="./about.html" class="mobile-nav-link">About</a>
-        <a href="./contact.html" class="mobile-nav-link">Contact</a>
-        <a href="/admin/login" class="mobile-nav-link" style="color:var(--theme-accent); font-weight:800;">Admin Dashboard</a>
-      </div>
-      <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1);">
-        <a href="./contact.html" class="btn btn-primary" style="width:100%; justify-content:center;">
-          <span>Start your project</span> <span class="btn-arrow">→</span>
-        </a>
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="process.html" class="nav-link">Process</a>
+        <a href="industries.html" class="nav-link">Industries</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="about.html" class="nav-link is-active" aria-current="page">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="free-plan.html" class="btn btn-outline header-plan-btn">Free Plan</a>
+        <a href="contact.html" class="btn btn-red header-cta-btn">Start Project</a>
+        <button type="button" class="mobile-menu-btn" id="mobileMenuOpen" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
       </div>
     </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="drawer-panel" role="dialog" aria-label="Mobile Navigation">
+      <div class="drawer-header">
+        <div class="brand-copy">
+          <span class="brand-name">EXPLORE WINGS</span>
+          <span class="brand-tag">TRIVANDRUM</span>
+        </div>
+        <button type="button" class="drawer-close-btn" id="mobileMenuClose" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="index.html" class="drawer-link">Home</a>
+        <a href="services.html" class="drawer-link">Services</a>
+        <a href="process.html" class="drawer-link">Process</a>
+        <a href="industries.html" class="drawer-link">Industries</a>
+        <a href="pricing.html" class="drawer-link">Pricing</a>
+        <a href="about.html" class="drawer-link is-active">About</a>
+        <a href="contact.html" class="drawer-link">Contact</a>
+        <a href="free-plan.html" class="drawer-link">Free Digital Plan</a>
+      </nav>
+      <div class="drawer-footer">
+        <div class="drawer-contact-item">
+          <strong>Direct Studio Lines:</strong>
+          <a href="tel:+917510405067">+91 75104 05067</a> / <a href="tel:+916238976168">+91 62389 76168</a>
+        </div>
+        <div class="drawer-contact-item">
+          <strong>WhatsApp Desk:</strong>
+          <a href="https://wa.me/918921309190?text=Hi%20Explore%20Wings%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">+91 89213 09190</a>
+        </div>
+        <a href="contact.html" class="btn btn-red btn-block" style="margin-top: var(--space-16);">Book Strategy Call</a>
+      </div>
+    </div>
   </div>
-</header>
-
-
-  <!-- Page Content -->
-  <main id="main-content">
-    <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <div class="page-hero-content" data-reveal="up">
-          <div class="breadcrumb"><a href="./index.html">Home</a> <span>/</span> <span>About Explore Wings</span></div>
-          <span class="eyebrow"><span class="eyebrow-dot"></span> <span>Born in Trivandrum • Built for Growth</span></span>
-          <h1 class="display-xl">Helping Kerala Businesses Look <span class="theme-shimmer">World-Class</span> Online.</h1>
+  <!-- PAGE HERO -->
+  <section class="section section-dark page-hero">
+    <div class="container">
+      <div class="page-hero-grid">
+        <div class="page-hero-main">
+          <div class="section-label-group">
+            <span class="signal-tag">ABOUT OUR STUDIO</span>
+            <span class="mono-num">TRIVANDRUM, KERALA</span>
+          </div>
+          <h1 class="page-hero-title">Based in Trivandrum. <span class="signal-highlight">Working everywhere.</span></h1>
+          <p class="page-hero-lead">We work with businesses across Kerala, India and internationally through clear, remote-first collaboration.</p>
+        </div>
+        <div class="page-hero-aside">
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- OUR STORY & FOUNDER NOTE (Bone Background) -->
+  <section class="section section-light" id="our-story">
+    <div class="container">
+      <div class="about-story-grid">
+        <div class="story-copy">
+          <div class="section-label-group">
+            <span class="signal-tag">ORIGIN & PURPOSE</span>
+            <span class="mono-num">TRIVANDRUM</span>
+          </div>
+          <h2 class="section-heading">Why we built Explore Wings</h2>
+          <p class="story-lead">
+            Our studio is based in Trivandrum, and we work with businesses across Kerala, throughout India and internationally.
+          </p>
           <p>
-            Explore Wings Digital Technologies is a creative, photography, web design, and marketing studio in Thiruvananthapuram dedicated to helping real-world businesses win more customers every day.
+            A signboard, social page and Google Maps listing can all help customers find a business. We bring these touchpoints together with a clear website and enquiry paths.
+          </p>
+          <p>
+            We plan the work with you and keep communication direct.
           </p>
         </div>
-      </div>
-    </section>
 
-    <!-- 1. Our Story -->
-    <section class="section">
-      <div class="container">
-        <div class="editorial-intro-grid">
-          <div class="layered-image-composition" data-reveal="left">
-            <div class="main-story-img">
-              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=85" alt="Explore Wings studio collaboration in Trivandrum" loading="lazy" />
-            </div>
-            <div class="floating-sub-img">
-              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Brand packaging review" loading="lazy" />
-            </div>
-          </div>
-
-          <div data-reveal="right">
-            <span class="eyebrow"><span class="eyebrow-dot"></span> <span>Our Story</span></span>
-            <h2 class="display-lg" style="margin-bottom:1.15rem;">Why We Built Explore Wings in Thiruvananthapuram</h2>
-            <p class="body-lg" style="margin-bottom:1rem;">
-              Across Trivandrum and Kerala, we saw extraordinary resorts in Kovalam, vibrant cafes in Kazhakkoottam, dedicated career academies, fitness centers, and heritage food brands — yet their online presence rarely matched the care inside their doors.
-            </p>
-            <p class="body-lg" style="margin-bottom:1.5rem;">
-              Business owners told us how frustrating it was to coordinate separate freelancers for logos, photography, websites, and social media. So we brought **web design, branding, packaging, on-location photo &amp; video shoots, and local marketing** under one roof.
-            </p>
-            <div class="logo-white-chip chip-lg">
-              <img src="/logo.png" alt="Explore Wings Official Logo" />
-            </div>
+        <div class="founder-note-card">
+          <div class="founder-badge">FOUNDER NOTE</div>
+          <blockquote class="founder-quote">
+            &ldquo;Good digital work should make it easier for people to find a business, understand its offer, and get in touch.&rdquo;
+          </blockquote>
+          <div class="founder-meta">
+            <div class="founder-name">Navaneeth & Team</div>
+            <div class="founder-role">Explore Wings Digital Technologies &bull; Trivandrum</div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- 2. Mission, Vision & Values Bento Grid -->
-    <section class="section section-tint">
-      <div class="container">
-        <div class="section-header" data-reveal="up">
-          <span class="eyebrow"><span class="eyebrow-dot"></span> <span>Mission, Vision &amp; Values</span></span>
-          <h2 class="display-lg">Core Principles Behind Every Project We Deliver</h2>
-        </div>
-
-        <div class="bento-grid" data-stagger="95">
-          <div class="bento-card dark-bento bento-col-7" data-reveal="left">
-            <div>
-              <span class="eyebrow">Our Mission</span>
-              <h3 class="display-md" style="margin-bottom:0.75rem;">Give Every Local Business the Creative Firepower of a Global Brand.</h3>
-              <p class="body-lg" style="color:rgba(255,255,255,0.84);">
-                We believe a family restaurant, Ayurvedic resort, or study-abroad institute in Kerala deserves the same visual polish and conversion clarity as the world's most admired brands.
-              </p>
-            </div>
-          </div>
-
-          <div class="bento-card bento-col-5" data-reveal="right">
-            <div>
-              <span class="eyebrow">Our Vision</span>
-              <h3 class="heading-lg" style="margin-bottom:0.65rem;">South India's Most Trusted Growth Partner</h3>
-              <p class="body-md">
-                To be the first team business owners in Trivandrum, Kerala, and beyond call when they are ready to launch a new brand or scale their customer enquiries.
-              </p>
-            </div>
-          </div>
-
-          <div class="bento-card bento-col-4" data-reveal="up">
-            <div>
-              <h3 class="heading-lg" style="margin-bottom:0.45rem;">01. Plain English Always</h3>
-              <p class="body-md">We never hide behind confusing tech jargon. We talk about bookings, footfall, and brand trust.</p>
-            </div>
-          </div>
-
-          <div class="bento-card bento-col-4" data-reveal="zoom">
-            <div>
-              <h3 class="heading-lg" style="margin-bottom:0.45rem;">02. Real On-Site Craft</h3>
-              <p class="body-md">Our team visits your location across Trivandrum to capture your real spaces, food, and people.</p>
-            </div>
-          </div>
-
-          <div class="bento-card bento-col-4" data-reveal="flip">
-            <div>
-              <h3 class="heading-lg" style="margin-bottom:0.45rem;">03. Full Ownership</h3>
-              <p class="body-md">You own your domain, website files, logo vectors, and raw photography from day one.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Our Team (Placeholder Team Cards) & Vertical Timeline -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header" data-reveal="up">
-          <span class="eyebrow"><span class="eyebrow-dot"></span> <span>Creative &amp; Strategy Team</span></span>
-          <h2 class="display-lg">The People Behind Explore Wings <span class="placeholder-tag">[Placeholder]</span></h2>
-          <p class="body-md" style="margin-top:0.45rem;">Designers, developers, photographers, and brand strategists based in Thiruvananthapuram.</p>
-        </div>
-
-        <div class="team-grid-4" data-stagger="90" style="margin-bottom:4.5rem;">
-          <div class="team-card" data-reveal="left">
-            <div class="team-photo-wrap">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Creative Director Placeholder" loading="lazy" />
-            </div>
-            <h3 class="heading-lg" style="font-size:1.1rem;">Brand &amp; Creative Lead</h3>
-            <p style="font-size:0.8rem; color:var(--theme-primary); font-weight:700;">Identity &amp; Packaging [Placeholder]</p>
-          </div>
-
-          <div class="team-card" data-reveal="up">
-            <div class="team-photo-wrap">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Web Architecture Lead Placeholder" loading="lazy" />
-            </div>
-            <h3 class="heading-lg" style="font-size:1.1rem;">Lead Web Architect</h3>
-            <p style="font-size:0.8rem; color:var(--theme-primary); font-weight:700;">Websites &amp; SEO [Placeholder]</p>
-          </div>
-
-          <div class="team-card" data-reveal="down">
-            <div class="team-photo-wrap">
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Social Media & Campaigns Lead Placeholder" loading="lazy" />
-            </div>
-            <h3 class="heading-lg" style="font-size:1.1rem;">Head of Growth &amp; Social</h3>
-            <p style="font-size:0.8rem; color:var(--theme-primary); font-weight:700;">Reels &amp; Local Ads [Placeholder]</p>
-          </div>
-
-          <div class="team-card" data-reveal="right">
-            <div class="team-photo-wrap">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Director of Photography Placeholder" loading="lazy" />
-            </div>
-            <h3 class="heading-lg" style="font-size:1.1rem;">Production Director</h3>
-            <p style="font-size:0.8rem; color:var(--theme-primary); font-weight:700;">Food, Resort &amp; Drone Shoots [Placeholder]</p>
-          </div>
-        </div>
-
-        <div class="section-header" data-reveal="up">
-          <span class="eyebrow"><span class="eyebrow-dot"></span> <span>Our Journey</span></span>
-          <h2 class="display-lg">How We Grew in Trivandrum</h2>
-        </div>
-
-        <div class="vertical-timeline">
-          <div class="v-timeline-line-track"><div class="v-timeline-line-fill"></div></div>
-
-          <div class="v-timeline-item" data-reveal="left">
-            <div class="v-timeline-dot"></div>
-            <div class="v-timeline-card">
-              <span class="v-timeline-year">Step 01 • Foundation</span>
-              <h3 class="heading-lg">Started in Thiruvananthapuram</h3>
-              <p class="body-md">Founded with a focus on helping local cafes, boutiques, and educators build clean, mobile-friendly websites and brand identities.</p>
-            </div>
-          </div>
-
-          <div class="v-timeline-item" data-reveal="right">
-            <div class="v-timeline-dot"></div>
-            <div class="v-timeline-card">
-              <span class="v-timeline-year">Step 02 • Production Crew</span>
-              <h3 class="heading-lg">Added In-House Photo, Video &amp; Reels</h3>
-              <p class="body-md">Expanded with dedicated food stylists, photographers, and drone filmmakers to shoot on location in Kovalam, Kazhakkoottam, and Kowdiar.</p>
-            </div>
-          </div>
-
-          <div class="v-timeline-item" data-reveal="left">
-            <div class="v-timeline-dot"></div>
-            <div class="v-timeline-card">
-              <span class="v-timeline-year">Step 03 • Today</span>
-              <h3 class="heading-lg">Complete Brand &amp; Digital Growth Partner</h3>
-              <p class="body-md">Supporting resorts, restaurants, study-abroad consultancies, fitness clubs, and retail brands across Kerala.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. "Proudly from Trivandrum" Map Section -->
-    <section class="section section-elevated">
-      <div class="container">
-        <div class="editorial-intro-grid">
-          <div data-reveal="left">
-            <span class="eyebrow"><span class="eyebrow-dot"></span> <span>Local Roots</span></span>
-            <h2 class="display-lg" style="margin-bottom:0.85rem;">Proudly from Trivandrum, Kerala</h2>
-            <p class="body-lg" style="margin-bottom:1.15rem;">
-              From the IT corridor in Kazhakkoottam and Technopark to the beaches of Kovalam and the heritage avenues of Kowdiar and East Fort — Thiruvananthapuram is our home.
-            </p>
-            <p class="body-md" style="margin-bottom:1.5rem;">
-              Being on the ground in Trivandrum means we can meet you in person over coffee, visit your venue for a quick shoot, and understand the exact rhythm of Kerala's festive seasons.
-            </p>
-            <a href="./contact.html" class="btn btn-primary"><span>Meet Our Team in Trivandrum</span> <span class="btn-arrow">→</span></a>
-          </div>
-
-          <div class="map-frame-luxury" data-reveal="right">
-            <iframe
-              title="Trivandrum (Thiruvananthapuram), Kerala Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126271.88635351292!2d76.8541259!3d8.5000379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbb805bbcd47%3A0x15439fab5c5c81cb!2sThiruvananthapuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Brands That Trust Us Scroller (Required on About Page) -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header" data-reveal="up">
-          <span class="eyebrow"><span class="eyebrow-dot"></span> <span>Trusted Across Kerala</span></span>
-          <h2 class="display-lg">Brands that trust us</h2>
-          <p class="body-md" style="margin-top:0.4rem;">Click any logo card to open its slide-in client details on the right.</p>
-        </div>
-      </div>
-      <div class="brand-marquee-wrapper" data-brand-scroller></div>
-    </section>
-  </main>
-
-  <!-- Mega Footer -->
-  <!-- SECTION 12: MEGA FOOTER WITH LINK COLUMNS & GIANT OUTLINED "EXPLORE WINGS" -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top-grid">
-      <div class="footer-brand-col">
-        <a href="./index.html" class="brand-logo-link">
-          <span class="logo-white-chip">
-            <img src="/logo.png" alt="Explore Wings Logo" />
-          </span>
-          <span class="brand-logo-text">
-            <span class="brand-logo-title" style="color:#FFFFFF;">Explore Wings</span>
-            <span class="brand-logo-sub" style="color:var(--theme-accent);">Digital Technologies</span>
-          </span>
-        </a>
-        <p>
-          Your complete digital brand, photography, website, and marketing partner in Thiruvananthapuram (Trivandrum), Kerala.
-        </p>
-        <form class="updates-form" onsubmit="event.preventDefault(); this.querySelector('input').value='Subscribed! Thank you.';">
-          <input type="email" placeholder="Enter your email for growth tips" required aria-label="Email for updates" />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-
-      <div class="footer-col">
-        <h5>Services</h5>
-        <ul>
-          <li><a href="/services#service-websites">Website Design</a></li>
-          <li><a href="/services#service-branding">Branding &amp; Logos</a></li>
-          <li><a href="/services#service-social">Social Media &amp; Reels</a></li>
-          <li><a href="/services#service-production">Photo &amp; Video Shoots</a></li>
-          <li><a href="/services#service-marketing">Digital Marketing</a></li>
-          <li><a href="/services#service-business-web">Business Websites</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5>Industries</h5>
-        <ul>
-          <li><a href="./services.html">Resorts &amp; Ayurvedic Spas</a></li>
-          <li><a href="./services.html">Cafes &amp; Restaurants</a></li>
-          <li><a href="./services.html">Education &amp; Study Abroad</a></li>
-          <li><a href="./services.html">Gyms &amp; Fitness Clubs</a></li>
-          <li><a href="./services.html">Food &amp; Retail Brands</a></li>
-          <li><a href="./services.html">Shopping Malls</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5>Company</h5>
-        <ul>
-          <li><a href="./about.html">About Explore Wings</a></li>
-          <li><a href="./pricing.html">Packages &amp; Pricing</a></li>
-          <li><a href="/#trusted-brands">Brands That Trust Us</a></li>
-          <li><a href="./contact.html">Book a Consultation</a></li>
-          <li><a href="/admin/login">Admin Dashboard</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5>Trivandrum HQ</h5>
-        <p style="margin-bottom:0.75rem;">
-          Trivandrum (Thiruvananthapuram), Kerala, India
-        </p>
-        <p style="line-height:1.75;">
-          <strong style="color:var(--theme-accent);">Call:</strong>
-          <a href="tel:+917510405067">+91 75104 05067</a>,
-          <a href="tel:+916238976168">+91 62389 76168</a><br />
-          <strong style="color:var(--theme-accent);">WhatsApp:</strong>
-          <a href="https://wa.me/918921309190" target="_blank" rel="noopener">+91 89213 09190</a><br />
-          <strong style="color:var(--theme-accent);">Email:</strong> <a href="mailto:hello@explorewings.in">hello@explorewings.in</a><br />
-          <strong style="color:var(--theme-accent);">Hours:</strong> Monday – Saturday: 9:30 AM – 6:30 PM IST
-        </p>
       </div>
     </div>
+  </section>
+  <!-- PRINCIPLES (Ink Background) -->
+  <section class="section section-dark" id="principles">
+    <div class="container">
+      <div class="section-label-group">
+        <span class="signal-tag">HOW WE OPERATE</span>
+        <span class="mono-num">06 PRINCIPLES</span>
+      </div>
+      <h2 class="section-heading">The engineering principles that guide our work</h2>
+      <p class="section-subheading">A few principles shape how we plan and deliver each project.</p>
 
-    <!-- Giant Outlined "EXPLORE WINGS" Watermark (Fills with Theme Color on Hover) -->
-    <div class="footer-giant-watermark" aria-hidden="true">EXPLORE WINGS</div>
+      <div class="principles-grid">
+        <div class="principle-card">
+          <div class="principle-num">01</div>
+          <h3 class="principle-title">Thoughtful engineering</h3>
+          <p class="principle-desc">We choose practical tools and clear structures for the work at hand.</p>
+        </div>
 
-    <div class="footer-bottom">
-      <span>© 2026 Explore Wings Digital Technologies. Crafted in Trivandrum, Kerala, India.</span>
-      <div class="social-links-row">
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-circle-link" aria-label="Instagram">IG</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-circle-link" aria-label="LinkedIn">IN</a>
-        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-circle-link" aria-label="Facebook">FB</a>
-        <a href="https://youtube.com" target="_blank" rel="noopener" class="social-circle-link" aria-label="YouTube">YT</a>
+        <div class="principle-card">
+          <div class="principle-num">02</div>
+          <h3 class="principle-title">Clear scope</h3>
+          <p class="principle-desc">We agree on deliverables, costs and responsibilities before work begins.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-num">03</div>
+          <h3 class="principle-title">Direct communication</h3>
+          <p class="principle-desc">We keep project conversations open and focused on next steps.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-num">04</div>
+          <h3 class="principle-title">Useful reporting</h3>
+          <p class="principle-desc">We share updates that relate to the agreed project goals.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-num">05</div>
+          <h3 class="principle-title">Respect for budget</h3>
+          <p class="principle-desc">We discuss costs and advertising spend as part of project planning.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-num">06</div>
+          <h3 class="principle-title">Maintainable delivery</h3>
+          <p class="principle-desc">We aim to hand over work with the access and context needed to use it.</p>
+        </div>
       </div>
     </div>
+  </section>
+  <!-- CLIENT BRAND GRID -->
+  <section class="section section-light brands-section" id="brands">
+    <div class="container">
+      <div class="section-label-group">
+        <span class="signal-tag">TRUSTED ACROSS KERALA</span>
+        <span class="mono-num">KERALA</span>
+      </div>
+      <h2 class="section-heading">Brands that trust us</h2>
+      <p class="section-subheading">A few of the teams we have worked with in Kerala.</p>
+
+      <div class="brands-static-row" id="brandsStaticRow" aria-label="Brands we have worked with"></div>
+    </div>
+  </section>
+  <!-- PROUDLY FROM TRIVANDRUM (Ink Background) -->
+  <section class="section section-dark" id="location-studio">
+    <div class="container">
+      <div class="studio-location-card">
+        <div class="studio-info-col">
+          <div class="section-label-group">
+            <span class="signal-tag">KERALA HEADQUARTERS</span>
+            <span class="mono-num">TRIVANDRUM</span>
+          </div>
+          <h2 class="studio-title">Proudly rooted in Trivandrum, Kerala</h2>
+          <p class="studio-desc">
+            Explore Wings Digital Technologies is based in Thiruvananthapuram, Kerala.
+          </p>
+          <div class="studio-facts">
+            <div class="studio-fact-item">
+              <strong>Studio Address:</strong>
+              <span>Trivandrum (Thiruvananthapuram), Kerala, India</span>
+            </div>
+            <div class="studio-fact-item">
+              <strong>Direct Phone:</strong>
+              <a href="tel:+917510405067">+91 75104 05067</a>
+            </div>
+            <div class="studio-fact-item">
+              <strong>WhatsApp Desk:</strong>
+              <a href="https://wa.me/918921309190" target="_blank" rel="noopener">+91 89213 09190</a>
+            </div>
+          </div>
+          <div style="margin-top: var(--space-20);">
+            <a href="https://maps.app.goo.gl/tTpirN3fq4usdxjG7" target="_blank" rel="noopener" class="btn btn-red">View Studio on Google Maps &rarr;</a>
+          </div>
+        </div>
+
+        <div class="studio-graphic-col">
+          <div class="studio-map-graphic">
+            <div class="map-grid-pattern"></div>
+            <div class="map-pin-pulse">
+              <span class="pin-ring"></span>
+              <span class="pin-dot"></span>
+            </div>
+            <div class="map-location-tag">
+              <strong>EXPLORE WINGS STUDIO</strong>
+              <span>Trivandrum, Kerala</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-brand">
+          <div class="footer-brand-chip">
+            <div class="logo-chip">
+              <img src="assets/logos/logo.png" alt="Explore Wings" width="36" height="36" class="logo-img">
+            </div>
+            <div>
+              <div class="footer-title">EXPLORE WINGS</div>
+              <div class="footer-sub">DIGITAL TECHNOLOGIES</div>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Trivandrum-based digital studio working with clients across Kerala, India and internationally. We build websites, improve local search visibility and create clear enquiry paths.
+          </p>
+          <div class="footer-malayalam-greeting">
+            Proud to build with Kerala businesses.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-heading">PAGES</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="services.html">Core Capabilities</a></li>
+            <li><a href="process.html">6-Step Execution</a></li>
+            <li><a href="industries.html">Kerala Sectors</a></li>
+            <li><a href="pricing.html">Investment & Scope</a></li>
+            <li><a href="about.html">Studio & Principles</a></li>
+            <li><a href="contact.html">Studio Desk</a></li>
+            <li><a href="free-plan.html">Free Digital Plan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-heading">CAPABILITIES</div>
+          <ul class="footer-links">
+            <li><a href="services.html#service-seo">Local Search Engine SEO</a></li>
+            <li><a href="services.html#service-ads">Search & Social Campaigns</a></li>
+            <li><a href="services.html#service-web">High-Speed Web Platforms</a></li>
+            <li><a href="services.html#service-whatsapp">WhatsApp Lead Automation</a></li>
+            <li><a href="services.html#service-brand">Brand Identity & Collateral</a></li>
+            <li><a href="services.html#service-analytics">Conversion Analytics Tracking</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-heading">TRIVANDRUM STUDIO</div>
+          <div class="footer-contact-block">
+            <div class="footer-contact-line">
+              <span class="contact-label">Location:</span>
+              <span>Trivandrum (Thiruvananthapuram), Kerala, India</span>
+            </div>
+            <div class="footer-contact-line">
+              <span class="contact-label">Direct Studio Lines:</span>
+              <span><a href="tel:+917510405067">+91 75104 05067</a> &bull; <a href="tel:+916238976168">+91 62389 76168</a></span>
+            </div>
+            <div class="footer-contact-line">
+              <span class="contact-label">WhatsApp:</span>
+              <a href="https://wa.me/918921309190?text=Hi%20Explore%20Wings%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener">+91 89213 09190</a>
+            </div>
+            <div class="footer-contact-line">
+              <span class="contact-label">Hours:</span>
+              <span>Monday – Saturday: 9:00 AM – 7:00 PM IST</span>
+            </div>
+          </div>
+          <a href="https://maps.app.goo.gl/tTpirN3fq4usdxjG7" target="_blank" rel="noopener" class="footer-map-pill">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Open in Google Maps</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- HUGE OUTLINED BRAND MARK -->
+      <div class="footer-giant-mark" aria-hidden="true">
+        EXPLORE WINGS
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">
+          &copy; 2026 Explore Wings Digital Technologies. All rights reserved. Registered in Kerala, India.
+        </div>
+        <div class="footer-legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <span class="legal-sep">/</span>
+          <a href="terms.html">Terms of Service</a>
+          <span class="legal-sep">/</span>
+          <a href="404.html">Status</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/918921309190?text=Hi%20Explore%20Wings%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat directly with Explore Wings on WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.838.835 2.791.835 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.741 0-3.376-.452-4.808-1.242L2 22l1.524-5.074c-.958-1.503-1.524-3.287-1.524-4.926 0-5.514 4.486-10 10-10s10 4.486 10 10z"/>
+    </svg>
+  </a>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- CHATBOT LAUNCHER -->
+  <button type="button" class="chatbot-launcher" id="chatbotToggle" aria-label="Open Explore Wings Assistant" aria-expanded="false" aria-controls="chatbotWidget">
+    <span class="chatbot-launcher-icon">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </span>
+    <span class="chatbot-launcher-text">Ask Assistant</span>
+  </button>
+
+  <!-- CHATBOT WIDGET -->
+  <div class="chatbot-widget" id="chatbotWidget" aria-hidden="true" role="dialog" aria-label="Explore Wings Digital Assistant">
+    <div class="chat-header">
+      <div class="chat-header-brand">
+        <div class="chat-avatar">EW</div>
+        <div>
+          <div class="chat-header-title">Webinc Smart Assistant</div>
+          <div class="chat-header-credit">Built by Webinc · Explore Wings, Kerala</div>
+        </div>
+      </div>
+      <button type="button" id="chatbotMinimize" class="chatbot-minimize" aria-label="Minimize assistant" title="Minimize assistant">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
+      </button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg chat-msg-bot">
+        Hi, I’m the Webinc Smart Assistant for Explore Wings. Ask me about services, project costs, timelines, our process, or getting in touch. I use a local knowledge base and can help you find the right next step.
+      </div>
+    </div>
+    <div class="chat-quick-replies" id="chatQuickReplies">
+      <button type="button" class="quick-reply-btn" data-reply="services">Services</button>
+      <button type="button" class="quick-reply-btn" data-reply="pricing">Pricing</button>
+      <button type="button" class="quick-reply-btn" data-reply="how_we_work">How we work</button>
+      <button type="button" class="quick-reply-btn" data-reply="location">Location</button>
+      <button type="button" class="quick-reply-btn" data-reply="consultation">Free Consultation</button>
+      <button type="button" class="quick-reply-btn" data-reply="whatsapp">WhatsApp</button>
+    </div>
+    <form class="chat-input-form" id="chatInputForm">
+      <label class="sr-only" for="chatInput">Ask the Webinc Smart Assistant</label>
+      <input id="chatInput" name="message" type="text" autocomplete="off" maxlength="500" placeholder="Ask a question..." required>
+      <button type="submit">Send</button>
+    </form>
   </div>
-</footer>
 
-
-  <!-- Wing Assistant Chatbot, Drawer & Floating WhatsApp -->
-  <!-- Floating WhatsApp Button (Every Page) -->
-
-<a
-  href="https://wa.me/918921309190?text=Hi%20Explore%20Wings%2C%20I&#39;d%20like%20to%20know%20more%20about%20your%20services."
-  class="whatsapp-float"
-  id="floatingWhatsappBtn"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Chat with Explore Wings Digital on WhatsApp"
-  onclick="fetch('/api/analytics/whatsapp-click').catch(function(){});"
->
-  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
-    <path d="M16.002 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.587.74 5.007 2.02 7.067L2.667 29.333l6.453-1.987A13.255 13.255 0 0016.002 29.333c7.36 0 13.333-5.973 13.333-13.333S23.362 2.667 16.002 2.667zm7.8 18.847c-.327.92-1.62 1.687-2.64 1.907-.7.147-1.613.267-4.687-1.007-3.927-1.627-6.467-5.613-6.66-5.873-.193-.26-1.587-2.113-1.587-4.027 0-1.913.993-2.86 1.347-3.247.353-.387.773-.487 1.033-.487.26 0 .52.007.747.02.24.013.56-.093.88.673.327.767 1.113 2.72 1.213 2.92.1.2.167.44.033.7-.133.267-.2.433-.4.667-.2.233-.42.52-.6.7-.2.2-.413.42-.18.82.233.4 1.04 1.713 2.233 2.773 1.533 1.367 2.827 1.793 3.227 1.993.4.2.633.167.867-.1.233-.267 1-1.167 1.267-1.567.267-.4.533-.333.9-.2.367.133 2.327 1.1 2.727 1.3.4.2.667.3.767.467.1.167.1.967-.227 1.887z"/>
-  </svg>
-  <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
-</a>
-
-
-  <!-- GSAP, ScrollTrigger, Script & Chatbot -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="./js/script.js?v=1.0.0" defer></script>
-  <script src="./js/chatbot.js?v=1.0.0" defer></script>
-  <script src="./js/store.js"></script>
+  <script src="script.js?v=6.6.0"></script>
 </body>
 </html>
