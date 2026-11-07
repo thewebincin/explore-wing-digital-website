@@ -8816,3 +8816,111 @@ html[data-mode="light"] .home-proof-strip li {
     animation: none;
   }
 }
+
+/* Keep scrolling responsive on pages with many translucent cards and sections. */
+html.is-auto-scrolling {
+  scroll-behavior: auto !important;
+}
+
+.section::before,
+.section::after,
+.page-hero::before,
+.page-hero::after {
+  filter: none;
+  animation: none;
+  opacity: 0.14;
+}
+
+.site-header,
+.top-bar {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.service-card,
+.capability-row-card,
+.industry-card,
+.pricing-card,
+.system-lane-card,
+.protocol-step-card,
+.contact-info-card,
+.contact-row-item,
+.map-card,
+.principle-card,
+.process-step-card,
+.process-step-box,
+.exec-step-item,
+.number-stat-box,
+.contact-method-card,
+.flowchart-container,
+.faq-item,
+.studio-location-card,
+.contact-next-steps,
+.glass-card {
+  background-color: var(--surface-1);
+  border-color: var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+html[data-mode] .service-card,
+html[data-mode] .capability-row-card,
+html[data-mode] .industry-card,
+html[data-mode] .pricing-card,
+html[data-mode] .system-lane-card,
+html[data-mode] .protocol-step-card,
+html[data-mode] .contact-info-card,
+html[data-mode] .contact-row-item,
+html[data-mode] .map-card,
+html[data-mode] .principle-card,
+html[data-mode] .process-step-card,
+html[data-mode] .process-step-box,
+html[data-mode] .exec-step-item,
+html[data-mode] .number-stat-box,
+html[data-mode] .contact-method-card,
+html[data-mode] .flowchart-container,
+html[data-mode] .faq-item,
+html[data-mode] .studio-location-card,
+html[data-mode] .contact-next-steps,
+html[data-mode] .glass-card {
+  background-color: var(--surface-1) !important;
+}
+
+.service-card:hover,
+.capability-row-card:hover,
+.industry-card:hover,
+.pricing-card:hover,
+.system-lane-card:hover,
+.protocol-step-card:hover,
+.contact-info-card:hover,
+.contact-row-item:hover,
+.map-card:hover,
+.principle-card:hover,
+.process-step-card:hover,
+.process-step-box:hover,
+.exec-step-item:hover,
+.number-stat-box:hover,
+.contact-method-card:hover,
+.flowchart-container:hover,
+.faq-item:hover,
+.studio-location-card:hover,
+.contact-next-steps:hover,
+.glass-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.motion-ready [data-motion-reveal] {
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.motion-ready [data-motion-reveal],
+.motion-ready [data-motion-reveal].is-visible {
+  will-change: auto;
+}
+
+.floating-whatsapp {
+  animation: none;
+}

@@ -590,7 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (staticBrandRow) {
     staticBrandRow.innerHTML = BRANDS.map(logo => `
       <div class="brand-chip" data-brand="${logo.brand || ''}" title="${logo.name}">
-        <img src="${brandAssetPrefix}${logo.file}" alt="${logo.name}" loading="lazy" class="brand-marquee-img">
+        <img src="${brandAssetPrefix}${logo.file}" alt="${logo.name}" loading="lazy" decoding="async" fetchpriority="low" class="brand-marquee-img">
       </div>
     `).join('');
   }
@@ -780,20 +780,26 @@ Budget: ${budget}`);
   if (autoScrollBtn) {
     let isAutoScrolling = false;
     let animId = null;
+    let previousFrameTime = 0;
 
     autoScrollBtn.addEventListener('click', () => {
       isAutoScrolling = !isAutoScrolling;
       autoScrollBtn.setAttribute('aria-pressed', isAutoScrolling ? 'true' : 'false');
       autoScrollBtn.classList.toggle('is-scrolling', isAutoScrolling);
+      document.documentElement.classList.toggle('is-auto-scrolling', isAutoScrolling);
 
       if (isAutoScrolling) {
-        function scrollStep() {
+        previousFrameTime = 0;
+        function scrollStep(timestamp) {
           if (!isAutoScrolling) return;
+          if (!previousFrameTime) previousFrameTime = timestamp;
+          const elapsed = Math.min(timestamp - previousFrameTime, 50);
+          previousFrameTime = timestamp;
           const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
           if (window.scrollY >= maxScroll - 2) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo(0, 0);
           } else {
-            window.scrollBy(0, 1.2);
+            window.scrollTo(0, window.scrollY + 72 * elapsed / 1000);
           }
           animId = requestAnimationFrame(scrollStep);
         }
@@ -804,11 +810,13 @@ Budget: ${budget}`);
     });
 
     ['wheel', 'touchstart', 'mousedown'].forEach(ev => {
-      window.addEventListener(ev, () => {
+      window.addEventListener(ev, (event) => {
         if (isAutoScrolling) {
+          if (ev === 'mousedown' && autoScrollBtn.contains(event.target)) return;
           isAutoScrolling = false;
           autoScrollBtn.setAttribute('aria-pressed', 'false');
           autoScrollBtn.classList.remove('is-scrolling');
+          document.documentElement.classList.remove('is-auto-scrolling');
           cancelAnimationFrame(animId);
         }
       }, { passive: true });
