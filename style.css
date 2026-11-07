@@ -7688,11 +7688,11 @@ textarea,
 
 .site-footer .footer-brand-chip .logo-chip {
   display: grid;
-  width: 64px;
-  height: 64px;
-  flex: 0 0 64px;
+  width: 160px;
+  height: 120px;
+  flex: 0 0 160px;
   place-items: center;
-  padding: 5px;
+  padding: 8px;
   border: 1px solid #FFFFFF !important;
   border-radius: 14px;
   background: #FFFFFF !important;
@@ -7701,9 +7701,14 @@ textarea,
 
 .site-footer .footer-brand-chip .logo-img {
   display: block;
-  width: 54px;
-  height: 54px;
+  width: 144px;
+  height: 104px;
   object-fit: contain;
+}
+
+.site-footer .footer-brand-chip .footer-title,
+.site-footer .footer-brand-chip .footer-sub {
+  display: none;
 }
 
 .site-footer .footer-brand-info .brand-logo-chip,

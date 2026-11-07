@@ -903,20 +903,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 260);
     }
 
-    let wasMinimized = false;
-    try {
-      wasMinimized = localStorage.getItem('ew_chatbot_minimized') === 'true' || sessionStorage.getItem('ew_chatbot_minimized') === 'true';
-    } catch (_) {}
-
-    if (!wasMinimized) {
-      setChatOpen(true);
-    } else {
-      chatWidget.classList.remove('is-open', 'is-minimizing');
-      chatWidget.style.display = 'none';
-      chatWidget.setAttribute('aria-hidden', 'true');
-      chatToggle.setAttribute('aria-expanded', 'false');
-      chatToggle.setAttribute('aria-label', 'Open Webinc Smart Assistant');
-    }
+    chatWidget.classList.remove('is-open', 'is-minimizing');
+    chatWidget.style.display = 'none';
+    chatWidget.setAttribute('aria-hidden', 'true');
+    chatToggle.setAttribute('aria-expanded', 'false');
+    chatToggle.setAttribute('aria-label', 'Open Webinc Smart Assistant');
 
     if (chatToggle) {
       chatToggle.addEventListener('click', (event) => {
